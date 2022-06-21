@@ -10,7 +10,7 @@ class Program
 {
 	static void Main(string[] args)
 	{
-
+		// Admission priceing.  Need to implement
 		List<String> admissionPrice = new List<String>();
 		{
 			admissionPrice.Add("$20");
