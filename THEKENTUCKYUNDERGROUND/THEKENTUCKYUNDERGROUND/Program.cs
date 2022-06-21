@@ -17,7 +17,7 @@ class Program
 			admissionPrice.Add("$30");
 			admissionPrice.Add("$40");
 			admissionPrice.Add("$50");
-			admissionPrice.Add("60");
+			admissionPrice.Add("$60");
 		}
 		if (admissionPrice.Contains("1"))
 			Console.WriteLine(admissionPrice);
