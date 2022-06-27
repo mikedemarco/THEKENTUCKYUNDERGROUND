@@ -10,14 +10,14 @@ class Program
 {
 	static void Main(string[] args)
 	{
-		// Admission priceing.  Need to implement
+
 		List<String> admissionPrice = new List<String>();
 		{
 			admissionPrice.Add("$20");
 			admissionPrice.Add("$30");
 			admissionPrice.Add("$40");
 			admissionPrice.Add("$50");
-			admissionPrice.Add("$60");
+			admissionPrice.Add("60");
 		}
 		if (admissionPrice.Contains("1"))
 			Console.WriteLine(admissionPrice);
@@ -34,6 +34,14 @@ class Program
 			Console.WriteLine("Available Destinations: Covington, Lexington, Louisville, Owensboro?");
 			Console.WriteLine();
 			string location = Console.ReadLine()!;
+
+			Double usd, eur, val;
+			// How many dollars
+			usd = 20;
+			// Current value of US$
+			val = 1.06;
+			eur = usd * val;
+			Console.WriteLine("Ticket Price: {0} Dollars = {1} EUR", usd, eur);
 
 			UndergroundRoutes[] routes = FindTunnelsTo(allRoutes, location);
 

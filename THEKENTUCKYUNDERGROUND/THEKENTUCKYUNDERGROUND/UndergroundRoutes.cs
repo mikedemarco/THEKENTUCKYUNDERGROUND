@@ -9,7 +9,6 @@ namespace THEKENTUCKYUNDERGROUND
     public class UndergroundRoutes
     {
         public int TunnelNumber { get; }
-        public int miles { get; }
         public string StartingPoint => PlacesServed[0];
         public string EndingPoint => PlacesServed[^1];
         public string[] PlacesServed { get; }
