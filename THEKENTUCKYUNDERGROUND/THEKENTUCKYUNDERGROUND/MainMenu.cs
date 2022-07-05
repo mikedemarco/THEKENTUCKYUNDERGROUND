@@ -15,17 +15,17 @@ namespace THEKENTUCKYUNDERGROUND
                 Console.Clear();
                 Console.WriteLine("Please choose one of the following options.");
                 Console.WriteLine();
-                Say("1", "Book a Tunnel Ticket");
-                Say("2", "Buying in Euro's? No problem! Convert to see cost in Euro's");
+                Say("1", "Book a Tunnel Ticket:");
+                Say("2", "Buying in Euro's? No problem! Convert to see cost in Euro's:");
                 Say("3", "New Routes coming soon! See Routes & Countdown:");
-                Say("4", "Quit");
+                Say("4", "Quit:");
 
                 Console.WriteLine();
                 string option = Console.ReadLine()!;
                 if (option == "1")
                 {
                     UndergroundRoutes[] allRoutes = UnderGroundRepository.InitializeRoutes();
-
+                    Console.Clear();
                     Console.WriteLine("Where would you like to travel to?\n");
                     Console.WriteLine("Available Destinations: Covington, Lexington, Louisville, Owensboro?\n");
                     string location = Console.ReadLine()!;
@@ -57,15 +57,16 @@ namespace THEKENTUCKYUNDERGROUND
 
                     var response2 = Console.ReadLine();
                     if (response2 == "1" || response2 == "2")
-                        Console.WriteLine("Please enter e-mail address to confirm your tunnel ticket");
+                        Console.WriteLine("Ticket Purchased: Pick up at tunnel entrance");
 
                 }
 
                 else if (option == "2")
                 {
+                    Console.Clear();
                     float dollars, conversion_rate, euros;
                     conversion_rate = .98f;
-                    Console.WriteLine("All tunnel tickets cost $20USD. To see converion from Euro's to US Dollars type 20:");
+                    Console.WriteLine("All Tunnel Tickets cost $20USD. To see converion from Euro's to US Dollars type 20:");
                     dollars = float.Parse(Console.ReadLine());
                     euros = dollars * conversion_rate;
                     Console.WriteLine("Tunnel Ticket cost in Euros: " + euros);
@@ -75,7 +76,7 @@ namespace THEKENTUCKYUNDERGROUND
                 else if (option == "3")
                 {
                     Console.Clear();
-                    Console.Write("Our future routes:\n");
+                    Console.Write("Our Future Routes:\n");
                     Console.WriteLine();
 
                     Console.WriteLine("Newport to Owensboro:");
@@ -116,14 +117,10 @@ namespace THEKENTUCKYUNDERGROUND
                 }
             }
         }
-
         private static UndergroundRoutes[] FindTunnelsTo(UndergroundRoutes[] routes, string location)
         {
             return Array.FindAll(routes, route => route.Serves(location));
         }
-
-
-
         public static void Say(string prefix, string message)
         {
             Console.Write("(");
