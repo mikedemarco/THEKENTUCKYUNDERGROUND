@@ -11,10 +11,10 @@ namespace THEKENTUCKYUNDERGROUND
 		public static UndergroundRoutes[] InitializeRoutes()
 		{
 			return new UndergroundRoutes[] {
-				new UndergroundRoutes(1,new string[]{"Covington", "Lexington"}),
-				new UndergroundRoutes(2,new string[]{"Lexington", "Owensboro"}),
-				new UndergroundRoutes(3,new string[]{"Owensboro", "Louisville"}),
-				new UndergroundRoutes(4,new string[]{"Louisville", "Covington"})
+				new UndergroundRoutes(1,new string[]{"COVINGTON", "LEXINGTON"}),
+				new UndergroundRoutes(2,new string[]{"LEXINGTON", "OWENSBORO"}),
+				new UndergroundRoutes(3,new string[]{"OWENSBORO", "LOUISVILLE"}),
+				new UndergroundRoutes(4,new string[]{"LOUISVILLE", "COVINGTON"})
 			};
 		}
 	}

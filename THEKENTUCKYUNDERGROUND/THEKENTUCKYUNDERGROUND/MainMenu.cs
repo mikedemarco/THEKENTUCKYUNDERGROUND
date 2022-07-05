@@ -16,7 +16,7 @@ namespace THEKENTUCKYUNDERGROUND
                 Console.WriteLine("Please choose one of the following options.");
                 Console.WriteLine();
                 Say("1", "Book a Tunnel Ticket:");
-                Say("2", "Buying in Euro's? No problem! Convert to see cost in Euro's:");
+                Say("2", "Buying in Euro? No problem! Convert to see cost in Euro:");
                 Say("3", "New Routes coming soon! See Routes & Countdown:");
                 Say("4", "Quit:");
 
@@ -27,8 +27,9 @@ namespace THEKENTUCKYUNDERGROUND
                     UndergroundRoutes[] allRoutes = UnderGroundRepository.InitializeRoutes();
                     Console.Clear();
                     Console.WriteLine("Where would you like to travel to?\n");
-                    Console.WriteLine("Available Destinations: Covington, Lexington, Louisville, Owensboro?\n");
-                    string location = Console.ReadLine()!;
+                    Console.WriteLine("Available Destinations: COVINGTON, LEXINGTON, LOUISVILLE, OWENSBORO?\n");
+                    string input = Console.ReadLine()!;
+                    string location = input.ToUpper();
                     Console.Clear();
 
                     UndergroundRoutes[] routes = FindTunnelsTo(allRoutes, location);
@@ -41,18 +42,17 @@ namespace THEKENTUCKYUNDERGROUND
                         Console.WriteLine($"No Tunnels travel to {location}! Please type N to cancel your request.\n");
 
                     Console.WriteLine("Would you like to buy a Tunnel Ticket?\n");
-
                     Console.WriteLine("Please Type Y for: Yes");
                     Console.WriteLine("Please Type N for: No");
                     var response = Console.ReadLine();
                     Console.WriteLine(response);
-                    if (response == "Y")
+                    if (response == "Y" || response == "y")
                         Console.WriteLine("1) For the first route option, please type 1");
-                    if (response == "Y")
+                    if (response == "Y" || response == "y")
                         Console.WriteLine("2) For the second route option, please type 2");
 
                     Console.WriteLine(response);
-                    if (response == "N" || response =="n")
+                    if (response == "N" || response == "n")
                         Console.WriteLine("No Ticket Purchased: Have a great day!");
 
                     var response2 = Console.ReadLine();
@@ -64,13 +64,21 @@ namespace THEKENTUCKYUNDERGROUND
                 else if (option == "2")
                 {
                     Console.Clear();
-                    float dollars, conversion_rate, euros;
-                    conversion_rate = .98f;
-                    Console.WriteLine("All Tunnel Tickets cost $20USD. To see converion from Euro's to US Dollars type 20:");
-                    dollars = float.Parse(Console.ReadLine());
-                    euros = dollars * conversion_rate;
-                    Console.WriteLine("Tunnel Ticket cost in Euros: " + euros);
-                    Console.ReadLine();
+                    try
+                    {
+                        float dollars, conversion_rate, euros;
+                        conversion_rate = .98f;
+                        Console.WriteLine("All Tunnel Tickets cost $20USD. To see converion from Euro's to US Dollars type: 20");
+                        dollars = float.Parse(Console.ReadLine());
+                        euros = dollars * conversion_rate;
+                        Console.WriteLine("Tunnel Ticket cost in Euros: " + euros);
+                        Console.ReadLine();
+                        }
+                        catch (Exception e)
+                        {
+                        Console.WriteLine(e.Message);
+                    }
+
                 }
 
                 else if (option == "3")

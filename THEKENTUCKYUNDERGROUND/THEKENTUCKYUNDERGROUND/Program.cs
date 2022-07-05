@@ -11,7 +11,7 @@ class Program
 	static void Main(string[] args)
 	{
 		Console.Title = "The Kentucky Underground";
-		Console.WriteLine("Thank you for choosing Kentucky Underground!\n");
+		Console.WriteLine("Thank you for choosing The Kentucky Underground!\n");
 		Console.WriteLine(DateTime.Now.ToString("MM/dd/yyyy HH:mm\n"));
 		Console.WriteLine("Ready to travel? (Type any key to continue.)");
 		Console.ReadKey(true);
@@ -27,8 +27,8 @@ class Program
 		//if (admissionPrice.Contains("1"))
 		//Console.WriteLine(admissionPrice);
 
-		bool continueBooking = true;
-		while (continueBooking == true)
+		// bool continueBooking = true;
+		// while (continueBooking == true)
 		{
 
 		}
