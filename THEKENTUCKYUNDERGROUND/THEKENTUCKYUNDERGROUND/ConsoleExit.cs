@@ -14,9 +14,9 @@ namespace THEKENTUCKYUNDERGROUND
             Console.WriteLine("Are you sure you want to Exit? (Y/N)");
             Console.WriteLine();
 
-            string exit = Console.ReadLine();
+            string exit = Console.ReadLine()!;
 
-            if (exit == "Y")
+            if (exit == "Y" || exit == "y")
             {
                 Environment.Exit(0);
             }
