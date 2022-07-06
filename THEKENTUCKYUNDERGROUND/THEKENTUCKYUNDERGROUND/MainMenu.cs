@@ -64,20 +64,16 @@ namespace THEKENTUCKYUNDERGROUND
                 else if (option == "2")
                 {
                     Console.Clear();
-                    try
+                    const decimal conversion_rate = .98m;
+                    decimal dollars = 0.00m;
+                    do
                     {
-                        float dollars, conversion_rate, euros;
-                        conversion_rate = .98f;
-                        Console.WriteLine("All Tunnel Tickets cost $20USD. To see converion from Euro's to US Dollars type: 20");
-                        dollars = float.Parse(Console.ReadLine());
-                        euros = dollars * conversion_rate;
-                        Console.WriteLine("Tunnel Ticket cost in Euros: " + euros);
-                        Console.ReadLine();
-                        }
-                        catch (Exception e)
-                        {
-                        Console.WriteLine(e.Message);
+                        Console.WriteLine("All Tunnel Tickets cost $20 USD. To see and convert to EUROs, please type 20:");
                     }
+                    while (!decimal.TryParse(Console.ReadLine(), out dollars));
+                    Console.WriteLine("${0}USD are equal to {1} Euros",
+                    dollars, dollars * conversion_rate);
+                    Console.ReadLine();
 
                 }
 
