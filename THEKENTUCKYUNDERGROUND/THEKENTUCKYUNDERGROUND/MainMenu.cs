@@ -42,9 +42,7 @@ namespace THEKENTUCKYUNDERGROUND
                         else
                             Console.WriteLine($"No Tunnels travel to {location}! Press any key to continue back to main menu.\n");
 
-                        Console.ReadKey();
-
-                        
+                        Console.ReadKey();                  
                     }
                 }
                 else if (option == "2")
@@ -56,21 +54,76 @@ namespace THEKENTUCKYUNDERGROUND
 
                     if (cash < 20)
                     {
-                        Console.WriteLine("Sorry that's not enough money.");
+                        Console.WriteLine("Sorry that's not enough money; Here is your money back.");
                     }
                     else if (cash == 20)
                     {
-                        Console.WriteLine("Ticket Purchased! Enjoy the ride!");
+                        Console.WriteLine("Ticket Purchased! Please fill out the following information to get your ticket!\n");
+
+                        string name;
+
+                        int age;
+
+                        int birthyear;
+
+                        Console.Write("Please enter your name: ");
+
+                        name = Console.ReadLine()!;
+
+                        Console.Write("Please enter your age: ");
+
+                        age = Convert.ToInt32(Console.ReadLine());
+
+                        Console.Write("Please enter the year you born?: ");
+
+                        birthyear = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine();
+
+                        Console.WriteLine("Thank you {0}.", name);
+
+                        Console.WriteLine("Age is {0}.", age);
+
+                        Console.WriteLine("Birth year is {0}.\n", birthyear);
+
+                        Console.WriteLine("Enjoy your travel!");
+
                     }
                     else
                     {
                         int change = cash - 20;
-                        Console.WriteLine("Ticket Purchased! " + change + " dollars is your change.");
+                        Console.WriteLine("Ticket Purchased! " + change + " dollars is your change.  Please fill out the following information to get your ticket!\n");
+
+                        string name;
+
+                        int age;
+
+                        int birthyear;
+
+                        Console.Write("Please enter your name: ");
+
+                        name = Console.ReadLine()!;
+
+                        Console.Write("Please enter your age: ");
+
+                        age = Convert.ToInt32(Console.ReadLine());
+
+                        Console.Write("Please enter the year you born?: ");
+
+                        birthyear = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine();
+
+                        Console.WriteLine("Thank you {0}.", name);
+
+                        Console.WriteLine("Age is {0}.", age);
+
+                        Console.WriteLine("Birth year is {0}.\n", birthyear);
+
+                        Console.WriteLine("Enjoy your travel!");
                     }
                     Console.ReadKey();
-
                 }
-
                 else if (option == "3")
                 {
                     Console.Clear();
@@ -84,9 +137,7 @@ namespace THEKENTUCKYUNDERGROUND
                     Console.WriteLine("${0}USD are equal to {1} Euros",
                     dollars, dollars * conversion_rate);
                     Console.ReadLine();
-
                 }
-
                 else if (option == "4")
                 {
                     Console.Clear();
@@ -118,12 +169,10 @@ namespace THEKENTUCKYUNDERGROUND
                     Console.WriteLine("Days until completion: {0:F2}\n", remainingDays3);
                     Console.ReadLine();
                 }
-
                 else if (option == "5")
                 {
                     ConsoleExit.Exit();
                 }
-
                 else
                 {
                     Console.WriteLine("Error: Please select a valid option!");
@@ -142,6 +191,5 @@ namespace THEKENTUCKYUNDERGROUND
             Console.Write(") " + message);
             Console.WriteLine();
         }
-
     }
 }
