@@ -16,22 +16,6 @@ class Program
 		Console.WriteLine("Ready to travel? (Type any key to continue.)");
 		Console.ReadKey(true);
 		MainMenu.Menu();
-
-		//List<String> admissionPrice = new List<String>();
-		{
-			//admissionPrice.Add("$20");
-			//admissionPrice.Add("$30");
-			//admissionPrice.Add("$40");
-			//admissionPrice.Add("$50");
-		}
-		//if (admissionPrice.Contains("1"))
-		//Console.WriteLine(admissionPrice);
-
-		// bool continueBooking = true;
-		// while (continueBooking == true)
-		{
-
-		}
 	}
 }
 

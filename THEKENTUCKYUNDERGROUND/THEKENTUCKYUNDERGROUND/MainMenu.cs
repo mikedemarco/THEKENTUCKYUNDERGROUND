@@ -40,9 +40,9 @@ namespace THEKENTUCKYUNDERGROUND
                             foreach (UndergroundRoutes route in routes)
                                 Console.WriteLine($"You can travel through Tunnel {route}\n");
                         else
-                            Console.WriteLine($"No Tunnels travel to {location}! Press any key to continue back to main menu.\n");
-
-                        Console.ReadKey();                  
+                            Console.WriteLine($"No Tunnels travel to {location}! \n");
+                        Console.WriteLine("Press any key to go back to main menu.\n");
+                        Console.ReadKey();
                     }
                 }
                 else if (option == "2")
