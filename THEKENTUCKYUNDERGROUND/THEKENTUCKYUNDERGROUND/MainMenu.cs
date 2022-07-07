@@ -58,7 +58,7 @@ namespace THEKENTUCKYUNDERGROUND
 
                     if (num < 20)
                     {
-                        Console.WriteLine("Sorry that's not enough money; Here is your money back.");
+                        Console.WriteLine("Sorry that's not enough money; Please try again with $20 or more.");
                     }
                     else if (num == 20)
                     {

@@ -5,8 +5,7 @@ Project: In a climate of high fuel costs, lack of mass public transportation, an
 The project will include the following features:
 
 1) The Kentucky Underground project will implement a “master loop” console application with quit option.
-2) The console application will calculate and display data based on an external factor (The new tunnel routes feature will get the current date, and display how many days remaining until the new tunnel routes are open).
-3) The Kentucky Underground will have a conversion tool that converts another input to another type and displays it (Users will be able to convert US Dollars into Euro's).
-4) A list, populate it with several values, retrieve at least one value, and use it in my program
+2) The Kentucky Underground project will calculate and display data based on an external factor (The "New Routes coming soon" feature within the main menu will get the current date, and display how many days remaining until the new tunnel routes are open).
+3) The Kentucky Underground will have a conversion tool that converts another input to another type and displays it. (Users will be able to convert US Dollars into Euro's).
 
 The application will work on: Linux, macOS and Windows as well.
