@@ -15,75 +15,60 @@ namespace THEKENTUCKYUNDERGROUND
                 Console.Clear();
                 Console.WriteLine("Please choose one of the following options.");
                 Console.WriteLine();
-                Say("1", "To View Tunnel Routes:");
+                Say("1", "View Tunnel Routes and Destinations:");
                 Say("2", "Book a Tunnel Ticket:");
-                Say("3", "Buying in Euro? No problem! Convert to see cost in Euro:");
+                Say("3", "Coming in from Europe? No Problem! See how much tickets cost in Euros:");
                 Say("4", "New Routes coming soon! See Routes & Countdown:");
                 Say("5", "Quit:");
 
                 Console.WriteLine();
                 string option = Console.ReadLine()!;
-                if (option == "1")
-                
+                if (option == "1")               
                 {
-                    Console.Clear();
-                    Console.WriteLine("    Direct Travel Routes:\n");
-                    Console.WriteLine(" (*) COVINGTON to LEXINGTON ");
-                    Console.WriteLine(" (*) LEXINGTON to OWENSBORO");
-                    Console.WriteLine(" (*) OWENSBORO to LOUISVILLE");
-                    Console.WriteLine(" (*) LOUISVILLE to COVINGTON\n" );
+                    {
+                        UndergroundRoutes[] allRoutes = UnderGroundRepository.InitializeRoutes();
+                        Console.Clear();
+                        Console.WriteLine("Where would you like to travel to? Please type one of our destinations below to see routes:\n");
+                        Console.WriteLine("Available Destinations: COVINGTON, LEXINGTON, LOUISVILLE, OWENSBORO?\n");
+                        string input = Console.ReadLine()!;
+                        string location = input.ToUpper();
+                        Console.Clear();
 
-                    Console.WriteLine("*Check out future routes and anticipated openings in the Main Menu*");
-                    Console.ReadLine();
+                        UndergroundRoutes[] routes = FindTunnelsTo(allRoutes, location);
+
+                        if (routes.Length > 0)
+                            foreach (UndergroundRoutes route in routes)
+                                Console.WriteLine($"Travel through Tunnel {route}\n");
+                        else
+                            Console.WriteLine($"No Tunnels travel to {location}! Press any key to continue back to main menu.\n");
+
+                        Console.ReadKey();
+
+                        
+                    }
                 }
                 else if (option == "2")
                 {
-                    UndergroundRoutes[] allRoutes = UnderGroundRepository.InitializeRoutes();
                     Console.Clear();
-                    Console.WriteLine("Where would you like to travel to?\n");
-                    Console.WriteLine("Available Destinations: COVINGTON, LEXINGTON, LOUISVILLE, OWENSBORO?\n");
-                    string input = Console.ReadLine()!;
-                    string location = input.ToUpper();
-                    Console.Clear();
+                    Console.WriteLine("Welcome! All Tunnel Tickets are $20. Please insert cash.");
 
-                    UndergroundRoutes[] routes = FindTunnelsTo(allRoutes, location);
+                    int cash = Convert.ToInt32(Console.ReadLine());
 
-                    if (routes.Length > 0)
-                        foreach (UndergroundRoutes route in routes)
-                            Console.WriteLine($"Travel through Tunnel {route}\n");
-
-                    else
-                        Console.WriteLine($"No Tunnels travel to {location}! Please type N to cancel your request.\n");
-                        
+                    if (cash < 20)
                     {
-                        {
-                            Console.WriteLine("Would you like to buy a Ticket?\n");
-                            Console.WriteLine("Please Type Y for: Yes");
-                            Console.WriteLine("Please Type N for: No");
-                            var response = Console.ReadLine();
-                            Console.WriteLine(response);
-
-
-                            if (response == "Y" || response == "y")
-                            {   
-                                Console.WriteLine("1) For the first route option, please type 1");
-                                Console.WriteLine("2) For the second route option, please type 2");
-                                Console.ReadLine();
-                            }
-                            else
-                              if (response == "N" || response == "n")
-                            {
-                                Console.Clear();
-                                Console.WriteLine("No Ticket Purchased: Have a great day!");
-                                Console.ReadLine();
-                            }
-                            else
-                            {
-                                Console.WriteLine("Error: Please select a valid option!");
-                                Thread.Sleep(1000);
-                            }
-                        }
+                        Console.WriteLine("Sorry that's not enough money.");
                     }
+                    else if (cash == 20)
+                    {
+                        Console.WriteLine("Ticket Purchased! Enjoy the ride!");
+                    }
+                    else
+                    {
+                        int change = cash - 20;
+                        Console.WriteLine("Ticket Purchased! " + change + " dollars is your change.");
+                    }
+                    Console.ReadKey();
+
                 }
 
                 else if (option == "3")
