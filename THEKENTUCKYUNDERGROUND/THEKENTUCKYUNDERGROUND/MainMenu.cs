@@ -15,14 +15,28 @@ namespace THEKENTUCKYUNDERGROUND
                 Console.Clear();
                 Console.WriteLine("Please choose one of the following options.");
                 Console.WriteLine();
-                Say("1", "Book a Tunnel Ticket:");
-                Say("2", "Buying in Euro? No problem! Convert to see cost in Euro:");
-                Say("3", "New Routes coming soon! See Routes & Countdown:");
-                Say("4", "Quit:");
+                Say("1", "To View Tunnel Routes:");
+                Say("2", "Book a Tunnel Ticket:");
+                Say("3", "Buying in Euro? No problem! Convert to see cost in Euro:");
+                Say("4", "New Routes coming soon! See Routes & Countdown:");
+                Say("5", "Quit:");
 
                 Console.WriteLine();
                 string option = Console.ReadLine()!;
                 if (option == "1")
+                
+                {
+                    Console.Clear();
+                    Console.WriteLine("    Direct Travel Routes:\n");
+                    Console.WriteLine(" (*) COVINGTON to LEXINGTON ");
+                    Console.WriteLine(" (*) LEXINGTON to OWENSBORO");
+                    Console.WriteLine(" (*) OWENSBORO to LOUISVILLE");
+                    Console.WriteLine(" (*) LOUISVILLE to COVINGTON\n" );
+
+                    Console.WriteLine("*Check out future routes and anticipated openings in the Main Menu*");
+                    Console.ReadLine();
+                }
+                else if (option == "2")
                 {
                     UndergroundRoutes[] allRoutes = UnderGroundRepository.InitializeRoutes();
                     Console.Clear();
@@ -40,28 +54,39 @@ namespace THEKENTUCKYUNDERGROUND
 
                     else
                         Console.WriteLine($"No Tunnels travel to {location}! Please type N to cancel your request.\n");
+                        
+                    {
+                        {
+                            Console.WriteLine("Would you like to buy a Ticket?\n");
+                            Console.WriteLine("Please Type Y for: Yes");
+                            Console.WriteLine("Please Type N for: No");
+                            var response = Console.ReadLine();
+                            Console.WriteLine(response);
 
-                    Console.WriteLine("Would you like to buy a Tunnel Ticket?\n");
-                    Console.WriteLine("Please Type Y for: Yes");
-                    Console.WriteLine("Please Type N for: No");
-                    var response = Console.ReadLine();
-                    Console.WriteLine(response);
-                    if (response == "Y" || response == "y")
-                        Console.WriteLine("1) For the first route option, please type 1");
-                    if (response == "Y" || response == "y")
-                        Console.WriteLine("2) For the second route option, please type 2");
 
-                    Console.WriteLine(response);
-                    if (response == "N" || response == "n")
-                        Console.WriteLine("No Ticket Purchased: Have a great day!");
-
-                    var response2 = Console.ReadLine();
-                    if (response2 == "1" || response2 == "2")
-                        Console.WriteLine("Ticket Purchased: Pick up at tunnel entrance");
-
+                            if (response == "Y" || response == "y")
+                            {   
+                                Console.WriteLine("1) For the first route option, please type 1");
+                                Console.WriteLine("2) For the second route option, please type 2");
+                                Console.ReadLine();
+                            }
+                            else
+                              if (response == "N" || response == "n")
+                            {
+                                Console.Clear();
+                                Console.WriteLine("No Ticket Purchased: Have a great day!");
+                                Console.ReadLine();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Error: Please select a valid option!");
+                                Thread.Sleep(1000);
+                            }
+                        }
+                    }
                 }
 
-                else if (option == "2")
+                else if (option == "3")
                 {
                     Console.Clear();
                     const decimal conversion_rate = .98m;
@@ -77,7 +102,7 @@ namespace THEKENTUCKYUNDERGROUND
 
                 }
 
-                else if (option == "3")
+                else if (option == "4")
                 {
                     Console.Clear();
                     Console.Write("Our Future Routes:\n");
@@ -87,29 +112,29 @@ namespace THEKENTUCKYUNDERGROUND
                     var currentDate = DateTime.Now;
                     var endDate = new DateTime(2022, 10, 30);
                     double remainingDays = endDate.Subtract(currentDate).TotalDays;
-                    Console.WriteLine("Days until completion: {0}\n", remainingDays);
-             
+                    Console.WriteLine("Days until completion: {0:F2}\n", remainingDays);
+
                     Console.WriteLine("Georgetown to Bowling Green");
                     var currentDate1 = DateTime.Now;
                     var endDate1 = new DateTime(2022, 12, 10);
                     double remainingDays1 = endDate1.Subtract(currentDate1).TotalDays;
-                    Console.WriteLine("Days until completion: {0}\n", remainingDays1);
+                    Console.WriteLine("Days until completion: {0:F2}\n", remainingDays1);
 
                     Console.WriteLine("Florence to Louisville");
                     var currentDate2 = DateTime.Now;
                     var endDate2 = new DateTime(2023, 07, 28);
                     double remainingDays2 = endDate2.Subtract(currentDate2).TotalDays;
-                    Console.WriteLine("Days until completion: {0}\n", remainingDays2);
+                    Console.WriteLine("Days until completion: {0:F2}\n", remainingDays2);
 
                     Console.WriteLine("Richmond to Lexington");
                     var currentDate3 = DateTime.Now;
                     var endDate3 = new DateTime(2023, 12, 15);
                     double remainingDays3 = endDate3.Subtract(currentDate3).TotalDays;
-                    Console.WriteLine("Days until completion: {0}\n", remainingDays3);
+                    Console.WriteLine("Days until completion: {0:F2}\n", remainingDays3);
                     Console.ReadLine();
                 }
 
-                else if (option == "4")
+                else if (option == "5")
                 {
                     ConsoleExit.Exit();
                 }
