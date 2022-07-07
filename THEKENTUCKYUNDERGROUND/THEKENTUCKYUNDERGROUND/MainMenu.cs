@@ -33,12 +33,12 @@ namespace THEKENTUCKYUNDERGROUND
                         string input = Console.ReadLine()!;
                         string location = input.ToUpper();
                         Console.Clear();
-
+                        Console.WriteLine("Available Tunnel Routes:\n");
                         UndergroundRoutes[] routes = FindTunnelsTo(allRoutes, location);
 
                         if (routes.Length > 0)
                             foreach (UndergroundRoutes route in routes)
-                                Console.WriteLine($"Travel through Tunnel {route}\n");
+                                Console.WriteLine($"You can travel through Tunnel {route}\n");
                         else
                             Console.WriteLine($"No Tunnels travel to {location}! Press any key to continue back to main menu.\n");
 
@@ -49,77 +49,37 @@ namespace THEKENTUCKYUNDERGROUND
                 {
                     Console.Clear();
                     Console.WriteLine("Welcome! All Tunnel Tickets are $20. Please insert cash.");
+                    string numInput = Console.ReadLine()!;
+                    Console.WriteLine(numInput);
 
-                    int cash = Convert.ToInt32(Console.ReadLine());
+                    int num = 0;
+                    Int32.TryParse(numInput, out num);
+                    Console.Clear();
 
-                    if (cash < 20)
+                    if (num < 20)
                     {
                         Console.WriteLine("Sorry that's not enough money; Here is your money back.");
                     }
-                    else if (cash == 20)
+                    else if (num == 20)
                     {
                         Console.WriteLine("Ticket Purchased! Please fill out the following information to get your ticket!\n");
-
                         string name;
-
-                        int age;
-
-                        int birthyear;
-
-                        Console.Write("Please enter your name: ");
-
+                        Console.Write("Please enter your name that you wish to be printed on your ticket: ");
                         name = Console.ReadLine()!;
-
-                        Console.Write("Please enter your age: ");
-
-                        age = Convert.ToInt32(Console.ReadLine());
-
-                        Console.Write("Please enter the year you born?: ");
-
-                        birthyear = Convert.ToInt32(Console.ReadLine());
-
                         Console.WriteLine();
-
-                        Console.WriteLine("Thank you {0}.", name);
-
-                        Console.WriteLine("Age is {0}.", age);
-
-                        Console.WriteLine("Birth year is {0}.\n", birthyear);
-
+                        Console.WriteLine("*Thank you {0}; your ticket has been confirmed.*\n", name);
                         Console.WriteLine("Enjoy your travel!");
 
                     }
                     else
                     {
-                        int change = cash - 20;
+                        int change = num - 20;
                         Console.WriteLine("Ticket Purchased! " + change + " dollars is your change.  Please fill out the following information to get your ticket!\n");
-
                         string name;
-
-                        int age;
-
-                        int birthyear;
-
-                        Console.Write("Please enter your name: ");
-
+                        Console.Write("Please enter your name that you wish to be printed on your ticket: ");
                         name = Console.ReadLine()!;
-
-                        Console.Write("Please enter your age: ");
-
-                        age = Convert.ToInt32(Console.ReadLine());
-
-                        Console.Write("Please enter the year you born?: ");
-
-                        birthyear = Convert.ToInt32(Console.ReadLine());
-
                         Console.WriteLine();
-
-                        Console.WriteLine("Thank you {0}.", name);
-
-                        Console.WriteLine("Age is {0}.", age);
-
-                        Console.WriteLine("Birth year is {0}.\n", birthyear);
-
+                        Console.WriteLine("*Thank you {0}; your ticket has been confirmed.*\n", name);
                         Console.WriteLine("Enjoy your travel!");
                     }
                     Console.ReadKey();
@@ -167,6 +127,12 @@ namespace THEKENTUCKYUNDERGROUND
                     var endDate3 = new DateTime(2023, 12, 15);
                     double remainingDays3 = endDate3.Subtract(currentDate3).TotalDays;
                     Console.WriteLine("Days until completion: {0:F2}\n", remainingDays3);
+
+                    Console.WriteLine("Louisville to Frankfort");
+                    var currentDate4 = DateTime.Now;
+                    var endDate4 = new DateTime(2024, 10, 18);
+                    double remainingDays4 = endDate4.Subtract(currentDate4).TotalDays;
+                    Console.WriteLine("Days until completion: {0:F2}\n", remainingDays4);
                     Console.ReadLine();
                 }
                 else if (option == "5")
