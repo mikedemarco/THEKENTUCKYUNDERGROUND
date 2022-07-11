@@ -29,7 +29,7 @@ namespace THEKENTUCKYUNDERGROUND
                         UndergroundRoutes[] allRoutes = UnderGroundRepository.InitializeRoutes();
                         Console.Clear();
                         Console.WriteLine("Where would you like to travel to? Please type one of our destinations below to see routes:\n");
-                        Console.WriteLine("Available Destinations: COVINGTON, LEXINGTON, LOUISVILLE, OWENSBORO?\n");
+                        Console.WriteLine("Available Destinations: COVINGTON, FRANKFORT, LEXINGTON, LOUISVILLE, NEWPORT, OWENSBORO?\n");
                         string input = Console.ReadLine()!;
                         string location = input.ToUpper();
                         Console.Clear();
