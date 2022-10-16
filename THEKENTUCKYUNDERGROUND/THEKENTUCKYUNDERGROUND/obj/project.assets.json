@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Micha\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND.csproj",
+      "projectUniqueName": "C:\\Users\\Micha\\Source\\Repos\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND.csproj",
       "projectName": "THEKENTUCKYUNDERGROUND",
-      "projectPath": "C:\\Users\\Micha\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND.csproj",
+      "projectPath": "C:\\Users\\Micha\\Source\\Repos\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND.csproj",
       "packagesPath": "C:\\Users\\Micha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Micha\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND\\obj\\",
+      "outputPath": "C:\\Users\\Micha\\Source\\Repos\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
