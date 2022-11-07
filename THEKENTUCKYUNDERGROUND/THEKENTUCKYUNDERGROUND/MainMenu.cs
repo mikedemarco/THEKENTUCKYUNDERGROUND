@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace THEKENTUCKYUNDERGROUND
 {
@@ -19,11 +21,13 @@ namespace THEKENTUCKYUNDERGROUND
                 Say("2", "Book a Tunnel Ticket:");
                 Say("3", "Coming in from Europe? No Problem! See how much tickets cost in Euros:");
                 Say("4", "New Routes coming soon! See Routes & Countdown:");
-                Say("5", "Quit:");
+                Say("5", "See Days and Hours of Operation");
+                Say("6", "Sign up for Email:");
+                Say("7", "Quit");
 
                 Console.WriteLine();
                 string option = Console.ReadLine()!;
-                if (option == "1")               
+                if (option == "1")
                 {
                     {
                         UndergroundRoutes[] allRoutes = UnderGroundRepository.InitializeRoutes();
@@ -98,6 +102,8 @@ namespace THEKENTUCKYUNDERGROUND
                     dollars, dollars * conversion_rate);
                     Console.ReadLine();
                 }
+
+
                 else if (option == "4")
                 {
                     Console.Clear();
@@ -106,7 +112,7 @@ namespace THEKENTUCKYUNDERGROUND
 
                     Console.WriteLine("Newport to Owensboro:");
                     var currentDate = DateTime.Now;
-                    var endDate = new DateTime(2022, 10, 30);
+                    var endDate = new DateTime(2022, 11, 30);
                     double remainingDays = endDate.Subtract(currentDate).TotalDays;
                     Console.WriteLine("Days until completion: {0:F2}\n", remainingDays);
 
@@ -136,6 +142,76 @@ namespace THEKENTUCKYUNDERGROUND
                     Console.ReadLine();
                 }
                 else if (option == "5")
+                {
+                    List<string> time = new List<string>();
+                    time.Add("4am-11pm");
+                    time.Add("5am-11pm");
+                    time.Add("5am-11:30pm");
+                    time.Add("5am-10:30pm");
+                    time.Add("5:30am-11:30pm");
+                    time.Add("10am-11:30pm");
+                    time.Add("10am-10pm");
+                    Console.Clear();
+
+                    Console.WriteLine("Please choose one of the following days:\n");
+                    Say("1", "Monday:");
+                    Say("2", "Tuesday:");
+                    Say("3", "Wednesday:");
+                    Say("4", "Thursday:");
+                    Say("5", "Friday:");
+                    Say("6", "Saturday:");
+                    Say("7", "Sunday:");
+
+
+                    Console.WriteLine();
+                    string option1 = Console.ReadLine()!;
+                    Console.Clear();
+                    if (option1 == "1")
+
+                    Console.WriteLine("Monday:" + time[0]);
+                   
+                    if (option1 == "2")
+                    Console.WriteLine("Tuesday:" + time[1]);
+                    
+                    if (option1 == "3")
+                    Console.WriteLine("Wednesday:" + time[2]);
+                   
+                    if (option1 == "4")
+                    Console.WriteLine("Thursday:" + time[3]);
+                   
+                    if (option1 == "5")
+                    Console.WriteLine("Friday:" + time[4]);
+                   
+                    if (option1 == "6")
+                    Console.WriteLine("Saturday:" + time[5]);
+                  
+                    if (option1 == "7")
+                    Console.WriteLine("Sunday:" + time[6]);
+                    Console.ReadLine();
+                }
+                else if (option == "6")
+                {
+                    Console.WriteLine("Enter your email address for updates");
+                    Console.ReadLine();
+                    static void ValidateEmail()
+                    {
+                        string email = Console.ReadLine();
+                        Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+                        Match match = regex.Match(email);
+                        if (match.Success)
+                        {
+                            Console.WriteLine(email + " is Valid Email Address");
+                            return;
+                        }
+                        else
+                            Console.WriteLine(email + " is Invalid Email Address");
+                        ValidateEmail();
+                    }
+
+
+
+                }
+                else if (option == "7")
                 {
                     ConsoleExit.Exit();
                 }

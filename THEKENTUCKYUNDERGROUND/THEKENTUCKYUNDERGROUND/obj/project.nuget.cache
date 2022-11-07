@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "69vTpjXSuUyA3wpOcVwxtY8u0T6x6Agx0BXZ76IOpXyn1sL4Z6JJ1v7PhpL47ptCGrTU8gLJUlG4UPTticnQ3g==",
+  "dgSpecHash": "vm+ceDz1F3UtQeo4sRVowU6sCP3EER6PLnyBN3oBKjhsB15YXoezMQML9RNLT1vsqqacH68qD69W+zkT3g9zhw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Micha\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Micha\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Micha\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\Micha\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
+    "C:\\Users\\Micha\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\Micha\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
+    "C:\\Users\\Micha\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
+  ],
   "logs": []
 }
