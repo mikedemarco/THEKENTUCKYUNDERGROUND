@@ -23,7 +23,7 @@ namespace THEKENTUCKYUNDERGROUND
                 Say("3", "Coming in from Europe? No Problem! See how much tickets cost in Euros:");
                 Say("4", "New Routes coming soon! See Routes & Countdown:");
                 Say("5", "See Days and Hours of Operation");
-                Say("6", "Sign up for Email:");
+                Say("6", "Subscribe to Email for news alerts:");
                 Say("7", "Rail Names and Seat Capacity Database:");
                 Say("8", "Quit");
                 
@@ -146,6 +146,7 @@ namespace THEKENTUCKYUNDERGROUND
                 }
                 else if (option == "5")
                 {
+                    // LIST FEATURE
                     List<string> time = new List<string>();
                     time.Add("4am-11pm");
                     time.Add("5am-11pm");
@@ -194,24 +195,21 @@ namespace THEKENTUCKYUNDERGROUND
                 }
                 else if (option == "6")
                 {
-                    Console.WriteLine("Enter your email address for updates");
-                    Console.ReadLine();
-                    
-                    static void ValidateEmail()
-                    {
+                        Console.Clear();
+                        Console.WriteLine("Please Enter Your Email Address To Subscribe!");
                         string email = Console.ReadLine();
                         Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
                         Match match = regex.Match(email);
                         if (match.Success)
                         {
-                            Console.WriteLine(email + " is Valid Email Address");
-                            return;
+                            Console.WriteLine(email + " is Valid Email Address. You have successfully subscribed!");
+                            
                         }
                         else
-                            Console.WriteLine(email + " is Invalid Email Address");
-                        ValidateEmail();
-                    }
+                            Console.WriteLine(email + " is an Invalid Email Address. Please try again");
+                                           
                 }
+                
                 else if (option == "7")
                 {
                     Database databaseObject = new Database();
@@ -231,7 +229,7 @@ namespace THEKENTUCKYUNDERGROUND
                     //Console.ReadKey();
 
 
-                    // Select from Database
+                    // **Select from Database** FEATURE
                     Console.Clear();
                     string query = "SELECT * FROM HighSpeedRails";
                     SQLiteCommand myCommand = new SQLiteCommand(query, databaseObject.myConnection);
