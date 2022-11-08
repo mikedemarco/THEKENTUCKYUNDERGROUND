@@ -202,12 +202,11 @@ namespace THEKENTUCKYUNDERGROUND
                         Match match = regex.Match(email);
                         if (match.Success)
                         {
-                            Console.WriteLine(email + " is Valid Email Address. You have successfully subscribed!");
-                            
+                            Console.WriteLine(email + " is Valid Email Address. You have successfully subscribed!");                           
                         }
                         else
-                            Console.WriteLine(email + " is an Invalid Email Address. Please try again");
-                                           
+                            Console.WriteLine(email + " is an Invalid Email Address. Press key to go back to main menu");
+                            Console.ReadLine();
                 }
                 
                 else if (option == "7")
