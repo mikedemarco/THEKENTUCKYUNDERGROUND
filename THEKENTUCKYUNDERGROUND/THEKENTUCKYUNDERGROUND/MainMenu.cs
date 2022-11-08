@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Data.SQLite;
 
 namespace THEKENTUCKYUNDERGROUND
 {
@@ -23,7 +24,9 @@ namespace THEKENTUCKYUNDERGROUND
                 Say("4", "New Routes coming soon! See Routes & Countdown:");
                 Say("5", "See Days and Hours of Operation");
                 Say("6", "Sign up for Email:");
-                Say("7", "Quit");
+                Say("7", "Rail Names and Seat Capacity Database:");
+                Say("8", "Quit");
+                
 
                 Console.WriteLine();
                 string option = Console.ReadLine()!;
@@ -193,6 +196,7 @@ namespace THEKENTUCKYUNDERGROUND
                 {
                     Console.WriteLine("Enter your email address for updates");
                     Console.ReadLine();
+                    
                     static void ValidateEmail()
                     {
                         string email = Console.ReadLine();
@@ -207,11 +211,45 @@ namespace THEKENTUCKYUNDERGROUND
                             Console.WriteLine(email + " is Invalid Email Address");
                         ValidateEmail();
                     }
+                }
+                else if (option == "7")
+                {
+                    Database databaseObject = new Database();
 
+                    // **Insert into Database**
+
+                    //string query = "INSERT INTO HighSpeedRails ('name', 'seats') VALUES (@name, @seats)";
+                    //SQLiteCommand myCommand = new SQLiteCommand(query, databaseObject.myConnection);
+                    //databaseObject.OpenConnection();
+                    //myCommand.Parameters.AddWithValue("@name", "Hawk");
+                    //myCommand.Parameters.AddWithValue("@seats", "One Hundred and Twenty");
+                    //var result = myCommand.ExecuteNonQuery();
+                    //databaseObject.CloseCOnnection();
+
+
+                    //Console.WriteLine("Rows Added : {0}", result);
+                    //Console.ReadKey();
+
+
+                    // Select from Database
+                    string query = "SELECT * FROM HighSpeedRails";
+                    SQLiteCommand myCommand = new SQLiteCommand(query, databaseObject.myConnection);
+                    databaseObject.OpenConnection();
+                    SQLiteDataReader result = myCommand.ExecuteReader();
+                    myCommand.Parameters.AddWithValue("@seats", "One Hundred and Twenty");
+                    if (result.HasRows)
+                    {
+                        while (result.Read())
+                        {
+                            Console.WriteLine("High Speed Rail Name: {0} - Seats: {1}", result["name"], result["seats"]);
+                        }
+                    }
+                    databaseObject.CloseCOnnection();
+                    Console.ReadKey();
 
 
                 }
-                else if (option == "7")
+                else if (option == "8")
                 {
                     ConsoleExit.Exit();
                 }

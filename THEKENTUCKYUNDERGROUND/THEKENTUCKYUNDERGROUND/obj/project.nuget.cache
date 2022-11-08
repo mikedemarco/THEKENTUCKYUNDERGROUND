@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "vm+ceDz1F3UtQeo4sRVowU6sCP3EER6PLnyBN3oBKjhsB15YXoezMQML9RNLT1vsqqacH68qD69W+zkT3g9zhw==",
+  "dgSpecHash": "BvDB2IBfM86ikha01pgRGL+Ken7SvZ4L7eG8VocfUGiyVEVvsREQTm4Vcnh05AvMPTNXP2Memyhah8wCFGvfIA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Micha\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND\\THEKENTUCKYUNDERGROUND.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Micha\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Micha\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\Micha\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.116\\stub.system.data.sqlite.core.netstandard.1.0.116.nupkg.sha512",
+    "C:\\Users\\Micha\\.nuget\\packages\\system.data.sqlite.core\\1.0.116\\system.data.sqlite.core.1.0.116.nupkg.sha512",
     "C:\\Users\\Micha\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
     "C:\\Users\\Micha\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\Micha\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
