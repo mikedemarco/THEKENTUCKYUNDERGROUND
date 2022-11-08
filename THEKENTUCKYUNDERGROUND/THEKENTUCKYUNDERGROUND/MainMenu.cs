@@ -25,7 +25,8 @@ namespace THEKENTUCKYUNDERGROUND
                 Say("5", "See Days and Hours of Operation");
                 Say("6", "Subscribe to Email for news alerts:");
                 Say("7", "Rail Names and Seat Capacity Database:");
-                Say("8", "Quit");
+                Say("8", "When you buy tickets, we donate to charity! See amount:");
+                Say("9", "Quit");
                 
 
                 Console.WriteLine();
@@ -94,7 +95,7 @@ namespace THEKENTUCKYUNDERGROUND
                 else if (option == "3")
                 {
                     Console.Clear();
-                    const decimal conversion_rate = .98m;
+                    const decimal conversion_rate = 1.01m;
                     decimal dollars = 0.00m;
                     do
                     {
@@ -157,7 +158,7 @@ namespace THEKENTUCKYUNDERGROUND
                     time.Add("10am-10pm");
                     Console.Clear();
 
-                    Console.WriteLine("Please choose one of the following days:\n");
+                    Console.WriteLine("Please choose the number corresponding to one of the following days:\n");
                     Say("1", "Monday:");
                     Say("2", "Tuesday:");
                     Say("3", "Wednesday:");
@@ -244,10 +245,24 @@ namespace THEKENTUCKYUNDERGROUND
                     }
                     databaseObject.CloseCOnnection();
                     Console.ReadKey();
-
+                
 
                 }
                 else if (option == "8")
+                {
+                    {
+                        var chaCalculations = new List<BaseCharityCalculator>
+                    {
+                        new SPCA(new CharityReport {Id = 1, Name = "Cha1", Level = "SPCA", Rate = 50, Tickets = 180 }),
+                        new HabitatForHumanity(new CharityReport {Id = 2, Name = "Cha2", Level = "HabitatForHumanity", Rate = 80, Tickets = 210 }),
+                    };
+
+                        var calculator = new CharityCalculator(chaCalculations);
+                        Console.WriteLine($"Sum of all the charitable donations are {calculator.CalculateTotalSalaries()} dollars!");
+                        Console.ReadLine();
+                    }
+                }
+                else if (option == "9")
                 {
                     ConsoleExit.Exit();
                 }

@@ -4,8 +4,8 @@ Project: In a climate of alarming energy costs, lack of mass public transportati
 
 The project will include the following features:
 
-1)	Create a dictionary or list, populate it with several values, retrieve at least one value, and use it in my program
-2)	Add comments to your code explaining how you are using at least 2 of the solid principles.
+1)	Creation of a list. The Kentucky Underground populates the days of the week along with their respective operation times. The list takes advantage of populating the list with several values and retrives at least one value and uses it in my program. Option 5 on MainMenu.cs
+2)	The Kentucky Underground utilizes 2 SOLID principals. 1) The ConsoleExit.cs displays the SOLID Principal: Single Responsibility Principle (The ConsoleExit.cs handles a single concern). 2) The CharityCalulator.cs uses the Solid Feature: Open Closed Principle. The CharityCalulator is closed for modification and opened for an extension if needed.
 3)	Make a generic class and use it.
 4)	Implement a regular expression (regex) to ensure a field either a phone number or an email address is always stored and displayed in the same format. 
 

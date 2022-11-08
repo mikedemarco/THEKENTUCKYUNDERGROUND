@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace THEKENTUCKYUNDERGROUND
 {
-    internal class ConsoleExit
+    internal class ConsoleExit //Feature: SOLID Principal: Single Responsibility Principle (The ConsoleExit.cs handles a single concern)
     {
         public static void Exit()
         {
@@ -21,7 +21,5 @@ namespace THEKENTUCKYUNDERGROUND
                 Environment.Exit(0);
             }
         }
-
     }
-
 }
