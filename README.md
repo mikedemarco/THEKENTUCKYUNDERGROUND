@@ -8,11 +8,12 @@ The project will include the following features:
 2)	The Kentucky Underground utilizes 2 SOLID principals. 1) The ConsoleExit.cs displays the SOLID Principal: Single Responsibility Principle (The ConsoleExit.cs handles a single concern). 2) The CharityCalulator.cs uses the Solid Feature: Open Closed Principle. The CharityCalulator is closed for modification and opened for an extension if needed.
 3)	The Kentucky Underground implements a regular expression (regex) to ensure an email address is always stored and displayed in the same format. 
 
+**Additional NuGet Packages needed to run application:**
+1) The database was built using SQlite (NuGet Package: System.Data.SQLite.Core) and was built with the assitance of DB Browser for SQLite: https://sqlitebrowser.org/
+2) NuGet Package: System.IO
 
 
-The application will work on: Linux, macOS and Windows as well.
-
-The system uses the following: 
+The Kentucky Underground system uses the following: 
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,3 +22,5 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Data.SQLite;
+
+The application will work on: Linux, macOS and Windows as well.
