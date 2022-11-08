@@ -173,29 +173,31 @@ namespace THEKENTUCKYUNDERGROUND
                     Console.Clear();
                     if (option1 == "1")
 
-                    Console.WriteLine("Monday:" + time[0]);
+                    Console.WriteLine("Monday's Operation Hours:" + time[0]);
                    
                     if (option1 == "2")
-                    Console.WriteLine("Tuesday:" + time[1]);
+                    Console.WriteLine("Tuesday's Operation Hours:" + time[1]);
                     
                     if (option1 == "3")
-                    Console.WriteLine("Wednesday:" + time[2]);
+                    Console.WriteLine("Wednesday's Operation Hours:" + time[2]);
                    
                     if (option1 == "4")
-                    Console.WriteLine("Thursday:" + time[3]);
+                    Console.WriteLine("Thursday's Operation Hours:" + time[3]);
                    
                     if (option1 == "5")
-                    Console.WriteLine("Friday:" + time[4]);
+                    Console.WriteLine("Friday Operation Hours:" + time[4]);
                    
                     if (option1 == "6")
-                    Console.WriteLine("Saturday:" + time[5]);
+                    Console.WriteLine("Saturday Operation Hours:" + time[5]);
                   
                     if (option1 == "7")
-                    Console.WriteLine("Sunday:" + time[6]);
-                    Console.ReadLine();
+                    Console.WriteLine("Sunday Operation Hours:" + time[6]);
+                    Console.ReadKey();
                 }
                 else if (option == "6")
                 {
+                    //Regex email feature
+
                         Console.Clear();
                         Console.WriteLine("Please Enter Your Email Address To Subscribe!");
                         string email = Console.ReadLine();
@@ -213,9 +215,9 @@ namespace THEKENTUCKYUNDERGROUND
                 else if (option == "7")
                 {
                     Database databaseObject = new Database();
+                    // Database Requirement
 
                     // **Insert into Database**
-
                     //string query = "INSERT INTO HighSpeedRails ('name', 'seats') VALUES (@name, @seats)";
                     //SQLiteCommand myCommand = new SQLiteCommand(query, databaseObject.myConnection);
                     //databaseObject.OpenConnection();
@@ -250,6 +252,7 @@ namespace THEKENTUCKYUNDERGROUND
                 }
                 else if (option == "8")
                 {
+                    Console.Clear();
                     {
                         var chaCalculations = new List<BaseCharityCalculator>
                     {
