@@ -232,6 +232,7 @@ namespace THEKENTUCKYUNDERGROUND
 
 
                     // Select from Database
+                    Console.Clear();
                     string query = "SELECT * FROM HighSpeedRails";
                     SQLiteCommand myCommand = new SQLiteCommand(query, databaseObject.myConnection);
                     databaseObject.OpenConnection();
