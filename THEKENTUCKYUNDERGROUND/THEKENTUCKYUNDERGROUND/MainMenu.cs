@@ -253,7 +253,7 @@ namespace THEKENTUCKYUNDERGROUND
                     {
                         var chaCalculations = new List<BaseCharityCalculator>
                     {
-                        new SPCA(new CharityReport {Id = 1, Name = "Cha1", Level = "SPCA", Rate = 50, Tickets = 180 }),
+                        new SPCA(new CharityReport {Id = 1, Name = "Cha1", Level = "SPCA", Rate = 50, Tickets = 190 }),
                         new HabitatForHumanity(new CharityReport {Id = 2, Name = "Cha2", Level = "HabitatForHumanity", Rate = 80, Tickets = 210 }),
                     };
 
