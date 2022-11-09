@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace THEKENTUCKYUNDERGROUND
 {
-    // FEATURE: Generic Class
+    // FEATURE: Create a Generic Class and use it
     // &
-    //Solid Feature: Open Closed Principle. CharityCalulator is closed for modification and open for an extension.
+    //SOLID FEATURE: Open Closed Principle. CharityCalulator is closed for modification and open for an extension.
     //I would not have to change my current classes if I needed to make any changes to the charitable contribuitons.
     //All I would need to do is create a new class with its own calculation logic.
     public class CharityCalculator 

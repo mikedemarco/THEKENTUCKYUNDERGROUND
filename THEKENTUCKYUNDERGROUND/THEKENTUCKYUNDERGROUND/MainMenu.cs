@@ -23,10 +23,9 @@ namespace THEKENTUCKYUNDERGROUND
                 Say("3", "Coming in from Europe? No Problem! See how much tickets cost in Euros:");
                 Say("4", "New Routes coming soon! See Routes & Countdown:");
                 Say("5", "See Days and Hours of Operation");
-                Say("6", "Subscribe to Email for news alerts:");
-                Say("7", "Rail Names and Seat Capacity Database:");
-                Say("8", "When you buy tickets, we donate to charity! See amount:");
-                Say("9", "Quit");
+                Say("6", "Rail Names and Seat Capacity Database:");
+                Say("7", "When you buy tickets, we donate to charity! See amount:");
+                Say("8", "Quit");
                 
 
                 Console.WriteLine();
@@ -193,26 +192,8 @@ namespace THEKENTUCKYUNDERGROUND
                     if (option1 == "7")
                     Console.WriteLine("Sunday Operation Hours:" + time[6]);
                     Console.ReadKey();
-                }
+                }                
                 else if (option == "6")
-                {
-                    //Regex email feature
-
-                        Console.Clear();
-                        Console.WriteLine("Please Enter Your Email Address To Subscribe!");
-                        string email = Console.ReadLine();
-                        Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-                        Match match = regex.Match(email);
-                        if (match.Success)
-                        {
-                            Console.WriteLine(email + " is Valid Email Address. You have successfully subscribed!");                           
-                        }
-                        else
-                            Console.WriteLine(email + " is an Invalid Email Address. Press key to go back to main menu");
-                            Console.ReadLine();
-                }
-                
-                else if (option == "7")
                 {
                     Database databaseObject = new Database();
                     // Database Requirement
@@ -250,7 +231,7 @@ namespace THEKENTUCKYUNDERGROUND
                 
 
                 }
-                else if (option == "8")
+                else if (option == "7")
                 {
                     Console.Clear();
                     {
@@ -265,7 +246,7 @@ namespace THEKENTUCKYUNDERGROUND
                         Console.ReadLine();
                     }
                 }
-                else if (option == "9")
+                else if (option == "8")
                 {
                     ConsoleExit.Exit();
                 }
