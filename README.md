@@ -13,7 +13,7 @@ The project will include the following features:
 1) The database was built using SQlite (NuGet Package: System.Data.SQLite.Core) and was built with the assitance of DB Browser for SQLite: https://sqlitebrowser.org/
 2) NuGet Package: System.IO
 
-**If uusing Visual Stuido Code: Run the project from the bin/Debug/net6.0 folder.**
+**If using Visual Stuido Code: Run the project from the bin/Debug/net6.0 folder.**
 
 The Kentucky Underground system uses the following: 
 using System;
