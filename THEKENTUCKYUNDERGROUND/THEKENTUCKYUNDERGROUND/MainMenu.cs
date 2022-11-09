@@ -56,7 +56,7 @@ namespace THEKENTUCKYUNDERGROUND
                 else if (option == "2")
                 {
                     Console.Clear();
-                    Console.WriteLine("Welcome! All Tunnel Tickets are $20. Please insert cash.");
+                    Console.WriteLine("Welcome! All Tunnel Tickets are $20. Please type 20:");
                     string numInput = Console.ReadLine()!;
                     Console.WriteLine(numInput);
 
@@ -231,7 +231,7 @@ namespace THEKENTUCKYUNDERGROUND
                     //Console.ReadKey();
 
 
-                    // **Select from Database** FEATURE
+                    // Feature: Query your database using a raw SQL query, not EF
                     Console.Clear();
                     string query = "SELECT * FROM HighSpeedRails";
                     SQLiteCommand myCommand = new SQLiteCommand(query, databaseObject.myConnection);
