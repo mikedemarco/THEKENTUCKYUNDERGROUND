@@ -221,15 +221,28 @@ namespace THEKENTUCKYUNDERGROUND
                     myCommand.Parameters.AddWithValue("@seats", "One Hundred and Twenty");
                     if (result.HasRows)
                     {
+                        Console.Clear();
+                        Console.WriteLine("Type 1 to see High Speed Rail Names OR Type 2 to see High Speed Rails with the amount of Seats.");
+                        string numInput1 = Console.ReadLine()!;
+                        Console.WriteLine(numInput1);
+
+                        int num1 = 0;
+                        Int32.TryParse(numInput1, out num1);
+                        Console.Clear();
                         while (result.Read())
                         {
-                            Console.WriteLine("High Speed Rail Name: {0} - Seats: {1}", result["name"], result["seats"]);
+                            if (num1 == 1)
+                            {
+                                Console.WriteLine("High Speed Rail Name: {0}", result["name"]);
+                            }
+                            else if (num1 > 1)
+                            {
+                                Console.WriteLine("High Speed Rail Name: {0} - Seats: {1}", result["name"], result["seats"]);
+                            }
                         }
                     }
-                    databaseObject.CloseCOnnection();
-                    Console.ReadKey();
-                
-
+                      databaseObject.CloseCOnnection();
+                      Console.ReadLine();
                 }
                 else if (option == "7")
                 {
