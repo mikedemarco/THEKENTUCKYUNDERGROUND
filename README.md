@@ -9,6 +9,11 @@ The project will include the following features:
 3)	The Kentucky Underground utlizes a Query your database using a raw SQL query, not EF. (Located in MainMenu.cs)
 4)  The Kentucky Underground creates a generic class and uses it. (CharityCalculator.cs)
 
+
+
+
+INFORMATION NEEDED TO RUN PROGRAM:
+
 **Additional NuGet Packages needed to run application:**
 1) The database was built using SQlite (NuGet Package: System.Data.SQLite.Core) and was built with the assitance of DB Browser for SQLite: https://sqlitebrowser.org/
 2) NuGet Package: System.IO
