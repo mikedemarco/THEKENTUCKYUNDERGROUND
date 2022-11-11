@@ -218,11 +218,10 @@ namespace THEKENTUCKYUNDERGROUND
                     SQLiteCommand myCommand = new SQLiteCommand(query, databaseObject.myConnection);
                     databaseObject.OpenConnection();
                     SQLiteDataReader result = myCommand.ExecuteReader();
-                    myCommand.Parameters.AddWithValue("@seats", "One Hundred and Twenty");
                     if (result.HasRows)
                     {
                         Console.Clear();
-                        Console.WriteLine("Type 1 to see High Speed Rail Names OR Type 2 to see High Speed Rails with the amount of Seats.");
+                        Console.WriteLine("Type 1 to see High Speed Rail Names\nType 2 to see High Speed Rails with the maximum occupancy of seats");
                         string numInput1 = Console.ReadLine()!;
                         Console.WriteLine(numInput1);
 
@@ -233,16 +232,16 @@ namespace THEKENTUCKYUNDERGROUND
                         {
                             if (num1 == 1)
                             {
-                                Console.WriteLine("High Speed Rail Name: {0}", result["name"]);
+                                Console.WriteLine("High Speed Rail: {0}", result["name"]);
                             }
-                            else if (num1 > 1)
+                            else if (num1 == 2)
                             {
-                                Console.WriteLine("High Speed Rail Name: {0} - Seats: {1}", result["name"], result["seats"]);
+                                Console.WriteLine("High Speed Rail: {0} - Seats: {1}", result["name"], result["seats"]);
                             }
                         }
                     }
                       databaseObject.CloseCOnnection();
-                      Console.ReadLine();
+                      Console.ReadKey();
                 }
                 else if (option == "7")
                 {
