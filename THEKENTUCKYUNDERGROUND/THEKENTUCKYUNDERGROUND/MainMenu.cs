@@ -26,7 +26,7 @@ namespace THEKENTUCKYUNDERGROUND
                 Say("6", "Rail Names and Seat Capacity Database:");
                 Say("7", "When you buy tickets, we donate to charity! See amount:");
                 Say("8", "Quit");
-                
+
 
                 Console.WriteLine();
                 string option = Console.ReadLine()!;
@@ -94,7 +94,7 @@ namespace THEKENTUCKYUNDERGROUND
                 else if (option == "3")
                 {
                     Console.Clear();
-                    const decimal conversion_rate = 1.01m;
+                    const decimal conversion_rate = .99m;
                     decimal dollars = 0.00m;
                     do
                     {
@@ -172,27 +172,27 @@ namespace THEKENTUCKYUNDERGROUND
                     Console.Clear();
                     if (option1 == "1")
 
-                    Console.WriteLine("Monday's Operation Hours:" + time[0]);
-                   
+                        Console.WriteLine("Monday's Operation Hours:" + time[0]);
+
                     if (option1 == "2")
-                    Console.WriteLine("Tuesday's Operation Hours:" + time[1]);
-                    
+                        Console.WriteLine("Tuesday's Operation Hours:" + time[1]);
+
                     if (option1 == "3")
-                    Console.WriteLine("Wednesday's Operation Hours:" + time[2]);
-                   
+                        Console.WriteLine("Wednesday's Operation Hours:" + time[2]);
+
                     if (option1 == "4")
-                    Console.WriteLine("Thursday's Operation Hours:" + time[3]);
-                   
+                        Console.WriteLine("Thursday's Operation Hours:" + time[3]);
+
                     if (option1 == "5")
-                    Console.WriteLine("Friday Operation Hours:" + time[4]);
-                   
+                        Console.WriteLine("Friday Operation Hours:" + time[4]);
+
                     if (option1 == "6")
-                    Console.WriteLine("Saturday Operation Hours:" + time[5]);
-                  
+                        Console.WriteLine("Saturday Operation Hours:" + time[5]);
+
                     if (option1 == "7")
-                    Console.WriteLine("Sunday Operation Hours:" + time[6]);
+                        Console.WriteLine("Sunday Operation Hours:" + time[6]);
                     Console.ReadKey();
-                }                
+                }
                 else if (option == "6")
                 {
                     Database databaseObject = new Database();
@@ -213,6 +213,8 @@ namespace THEKENTUCKYUNDERGROUND
 
 
                     // Feature: Query your database using a raw SQL query, not EF
+
+                    List<HighSpeedRails> highSpeedRails = new List<HighSpeedRails>();
                     Console.Clear();
                     string query = "SELECT * FROM HighSpeedRails";
                     SQLiteCommand myCommand = new SQLiteCommand(query, databaseObject.myConnection);
@@ -220,28 +222,25 @@ namespace THEKENTUCKYUNDERGROUND
                     SQLiteDataReader result = myCommand.ExecuteReader();
                     if (result.HasRows)
                     {
-                        Console.Clear();
-                        Console.WriteLine("Type 1 to see High Speed Rail Names\nType 2 to see High Speed Rails with the maximum occupancy of seats");
-                        string numInput1 = Console.ReadLine()!;
-                        Console.WriteLine(numInput1);
-
-                        int num1 = 0;
-                        Int32.TryParse(numInput1, out num1);
-                        Console.Clear();
                         while (result.Read())
                         {
-                            if (num1 == 1)
+                            HighSpeedRails highSpeedRail = new HighSpeedRails
                             {
-                                Console.WriteLine("High Speed Rail: {0}", result["name"]);
-                            }
-                            else if (num1 == 2)
-                            {
-                                Console.WriteLine("High Speed Rail: {0} - Seats: {1}", result["name"], result["seats"]);
-                            }
+                                Name = result["name"].ToString(),
+                                Seats = result["seats"].ToString()
+                            };
+
+                            highSpeedRails.Add(highSpeedRail);
                         }
                     }
-                      databaseObject.CloseCOnnection();
-                      Console.ReadKey();
+                    databaseObject.CloseCOnnection();
+
+                    foreach (var item in highSpeedRails)
+                    {
+                        Console.WriteLine("High Speed Rails: {0} - Seats: {1}", item.Name, item.Seats);
+                    }
+
+                    Console.ReadKey();
                 }
                 else if (option == "7")
                 {
