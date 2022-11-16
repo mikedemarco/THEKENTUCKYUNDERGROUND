@@ -115,13 +115,13 @@ namespace THEKENTUCKYUNDERGROUND
 
                     Console.WriteLine("Newport to Owensboro:");
                     var currentDate = DateTime.Now;
-                    var endDate = new DateTime(2022, 11, 30);
+                    var endDate = new DateTime(2022, 12, 20);
                     double remainingDays = endDate.Subtract(currentDate).TotalDays;
                     Console.WriteLine("Days until completion: {0:F2}\n", remainingDays);
 
                     Console.WriteLine("Georgetown to Bowling Green");
                     var currentDate1 = DateTime.Now;
-                    var endDate1 = new DateTime(2022, 12, 10);
+                    var endDate1 = new DateTime(2022, 12, 30);
                     double remainingDays1 = endDate1.Subtract(currentDate1).TotalDays;
                     Console.WriteLine("Days until completion: {0:F2}\n", remainingDays1);
 
